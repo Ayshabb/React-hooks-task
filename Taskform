@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+
+function TaskForm({ onAddTask }) {
+  const [title, setTitle] = useState("");
+  const [errors, setErrors] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!title.trim()) {
+      setErrors("Task title cannot be empty");
+      return;
+    }
+
+    onAddTask(title);
+    setTitle("");
+    setErrors("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Enter task..."
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+
+      <button type="submit">Add Task</button>
+
+      {errors && <p style={{ color: "red" }}>{errors}</p>}
+    </form>
+  );
+}
+
+export default TaskForm;

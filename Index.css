@@ -1,1 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
+/* Light Theme */
+.light {
+  background: white;
+  color: black;
+}
+
+/* Dark Theme */
+.dark {
+  background: #222;
+  color: white;
+}
+
+button {
+  margin-bottom: 20px;
+  padding: 8px 12px;
+}
+
+input {
+  margin-right: 10px;
+  padding: 5px;
+}
